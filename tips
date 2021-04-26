@@ -1,0 +1,39 @@
+///
+Node Core:
+ - os
+ - fs
+ - events
+ - http
+
+ ///
+ In node, "global" object replace "window"
+
+ ////
+ Every file in node is "module" and has "module" object
+
+ ///
+ To export : module.exports.someFunc = someFunc;
+
+ ///
+ To load module : const module = required('path');
+ Now we can use module's exports;
+
+ ///
+ We can override exports : module.exports = someFunc;
+
+ ///
+ Module is represented as a function (exports, require, module, __dirname, __filename) in the box
+
+ ///
+ We can see default modules in Node`s docs and use it with require('someModule')
+ It can be path, os, fs whatever
+
+ ///
+ Most functions has sync and async methods: async take callbacks as an arguments and result is
+ stored in it. Sync operations on server will block global thread (FOR ALL CONNECTIONS) while 
+ he is processing
+
+ ///
+ Convention to class is upper-case: 
+ const SomeClass = require('someClass');
+ var obj = new SomeClass();
