@@ -37,3 +37,9 @@ Node Core:
  Convention to class is upper-case: 
  const SomeClass = require('someClass');
  var obj = new SomeClass();
+
+ ////
+ You must register eventLogger BEFORE emit eventLogger
+
+ ///
+ When emit event, you can pass extra data as an object (second param)
