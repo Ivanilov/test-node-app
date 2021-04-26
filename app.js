@@ -1,8 +1,16 @@
-const Logger = require('./logger');
-const logger = new Logger();
+const http = require('http');
+const server = http.createServer((request, response) => {
+    if (request.url === '/') {
+        response.write('Hello world!');
+        response.end(); 
+    }
 
-logger.on('messageLogged', (e) => {
-    console.log('Listener called', e);
+    if (request.url === '/api/courses') {
+        response.write(JSON.stringify([1, 2, 3]));
+        response.end();
+    }
 });
 
-logger.log('Hello world!');
+server.listen(3000);
+
+console.log('Server started...');
